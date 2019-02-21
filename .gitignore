@@ -9,8 +9,9 @@ build
 **/.idea
 **/.gradle
 
-gradle-proj/gradle
-gradle-proj/out
-gradle-proj/src
-gradle-proj/build
+gradle-proj/gradle/*
+gradle-proj/out/*
+gradle-proj/src/*
+gradle-proj/build/*
 
+gradle-proj/.gradle/*
