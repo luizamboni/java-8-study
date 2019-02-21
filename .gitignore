@@ -1,4 +1,16 @@
-.vscode/*
-.idea/*
+# Ignore Gradle project-specific cache directory
+.gradle
 
-**/*.class
+# Ignore Gradle build output directory
+build
+
+.idea
+
+**/.idea
+**/.gradle
+
+gradle-proj/gradle
+gradle-proj/out
+gradle-proj/src
+gradle-proj/build
+
