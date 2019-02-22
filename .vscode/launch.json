@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - App",
+      "request": "launch",
+      "mainClass": "App"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - FlatMap",
+      "request": "launch",
+      "mainClass": "FlatMap"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Run",
+      "request": "launch",
+      "mainClass": "Run"
+    }
+  ]
+}
