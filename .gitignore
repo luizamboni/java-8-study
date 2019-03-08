@@ -15,3 +15,5 @@ gradle-proj/src/*
 gradle-proj/build/*
 
 gradle-proj/.gradle/*
+
+**/*.class

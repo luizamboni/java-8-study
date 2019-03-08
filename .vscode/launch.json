@@ -2,6 +2,24 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - ConcurrentClasses",
+      "request": "launch",
+      "mainClass": "ConcurrentClasses"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SyncExecutions",
+      "request": "launch",
+      "mainClass": "SyncExecutions"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - ThreadsExample",
+      "request": "launch",
+      "mainClass": "ThreadsExample"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - App",
       "request": "launch",
       "mainClass": "App"
