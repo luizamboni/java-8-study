@@ -1,6 +1,8 @@
 package study.withgradle;
 
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Scheduler;
+import reactor.core.scheduler.Schedulers;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -10,6 +12,48 @@ public class App {
     }
 
     public static void main(String[] args) {
+        int cpus = Runtime.getRuntime().availableProcessors();
+
+        System.out.println("available cpus : " + cpus);
+
+
+        Flux.range(1, 10)
+//                .publishOn(Schedulers.single())
+                .publishOn(Schedulers.immediate())
+
+                .map(n -> {
+                    try {
+                        /**
+                         * run in parent Thread
+                         */
+                        Thread.sleep(1000);
+                        System.out.println(Thread.currentThread().getName());
+                        System.out.println(n);
+
+                        return n;
+                    } catch (InterruptedException e) {
+                        return n;
+                    }
+                })
+//                .parallel().runOn(Schedulers.parallel())
+                .parallel().runOn(Schedulers.newParallel("custom", 2))
+//                .publishOn(Schedulers.parallel())
+                .map(n -> {
+                    try {
+                        /**
+                         * run in parent Thread
+                         */
+                        Thread.sleep(1000);
+                        System.out.println(Thread.currentThread().getName());
+                        System.out.println(n);
+
+                        return n;
+                    } catch (InterruptedException e) {
+                        return n;
+                    }
+                })
+                .subscribe();
+
 
 //        pipeOnlyExecuteOnSubscribe();
 //
@@ -52,16 +96,16 @@ public class App {
             return n;
         }).subscribe();
     }
-
-    private static void withCustomSubscriberThatCancelIntarnaly() {
-
-        System.out.println("\nwithCustomSubscriber with SubscriberExample ---------------\n");
-
-        SubscriberExample<Integer> ss = new SubscriberExample();
-        Flux<Integer> ints = Flux.range(1, 40000000);
-
-        ints.subscribe(ss);
-    }
+//
+//    private static void withCustomSubscriberThatCancelIntarnaly() {
+//
+//        System.out.println("\nwithCustomSubscriber with SubscriberExample ---------------\n");
+//
+//        SubscriberExample<Integer> ss = new SubscriberExample();
+//        Flux<Integer> ints = Flux.range(1, 40000000);
+//
+//        ints.subscribe(ss);
+//    }
 
     private static void requestOnly2(){
         Flux<Integer> ints = Flux.range(1, 4);

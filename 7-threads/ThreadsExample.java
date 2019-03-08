@@ -3,25 +3,24 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.*;
 
-
 public class ThreadsExample {
 
 
     public static void main(String[] args) {
 
-			// out.println("##	callable example ----------------------------------");
-			// basicThreadExampleWithCallable();
+			out.println("##	callable example ----------------------------------");
+			basicThreadExampleWithCallable();
 
-			// out.println("\n##	runnable example ----------------------------------");
-			// basicThreadExampleWithRunnable();
+			out.println("\n##	runnable example ----------------------------------");
+			basicThreadExampleWithRunnable();
 
 
-			// out.println("\n##	stealing example ----------------------------------");
-			// try {
-			// 	stealingExample();
+			out.println("\n##	stealing example ----------------------------------");
+			try {
+				stealingExample();
 
-			// } catch (Exception e) {
-			// }
+			} catch (Exception e) {
+			}
 
 			out.println("\n##	Scheduled Executors example ----------------------------------");
 			try {
