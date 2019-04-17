@@ -1,17 +1,15 @@
-package study.withgradle;
+package example.reactor;
+
 
 import reactor.core.publisher.Flux;
-import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-public class App {
+public class BasicReactor {
     public String getGreeting() {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
+    public void run(String[] args) {
         int cpus = Runtime.getRuntime().availableProcessors();
 
         System.out.println("available cpus : " + cpus);

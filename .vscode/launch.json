@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - LocalDateExample",
+      "request": "launch",
+      "mainClass": "LocalDateExample"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - ConcurrentClasses",
       "request": "launch",
       "mainClass": "ConcurrentClasses"
